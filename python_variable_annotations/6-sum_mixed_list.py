@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Module that takes a mixed list of integers and floats and returns their sum as a float."""
+"""Module that takes a mixed list of integers and
+floats and returns their sum as a float."""
 
 
 from typing import List, Union
