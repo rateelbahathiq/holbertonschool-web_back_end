@@ -1,171 +1,81 @@
-Python Variable Annotations
-📌 Project Overview
+# Python Variable Annotations
 
-This project introduces Python type annotations and progressively explores advanced typing concepts such as:
+## 📌 Description
 
-Variable annotations
+This project introduces **type annotations in Python** and explores progressively advanced typing concepts including:
 
-Function annotations
+- Variable annotations  
+- Function annotations  
+- List and Union types  
+- Tuple typing  
+- Callable typing  
+- Higher-order functions  
+- Abstract container types (`Iterable`, `Sequence`)  
 
-List and Union types
+The goal is to understand how Python’s typing system improves code clarity, readability, and maintainability while keeping Python dynamically typed.
 
-Tuple typing
+---
 
-Callable typing
+## 🧠 Concepts Covered
 
-Higher-order functions
+- Using PEP 526 variable annotations  
+- Annotating function parameters and return types  
+- Typing collections with `List`, `Tuple`, and `Union`  
+- Writing higher-order functions with `Callable`  
+- Understanding abstract types like `Iterable` and `Sequence`  
+- Designing flexible and precise type contracts  
+- Writing clean, PEP 8–compliant code  
 
-Abstract container types (Iterable, Sequence)
+---
 
-The goal is to understand how to:
+## 📂 Files
 
-Clearly define function contracts
+| File | Description |
+|------|------------|
+| `0-add.py` | Function that adds two floats |
+| `1-concat.py` | Concatenates two strings |
+| `2-floor.py` | Returns the floor of a float |
+| `3-to_str.py` | Converts a float to string |
+| `4-define_variables.py` | Defines annotated variables |
+| `5-sum_list.py` | Sums a list of floats |
+| `6-sum_mixed_list.py` | Sums a list of ints and floats |
+| `7-to_kv.py` | Returns a tuple with squared value |
+| `8-make_multiplier.py` | Returns a multiplier function |
+| `9-element_length.py` | Returns elements and their lengths |
 
-Improve code readability
+---
 
-Enable static type checking
+## 🚀 Example Usage
 
-Design flexible and precise interfaces
+### add
 
-All tasks follow:
+```python
+from 0-add import add
 
-PEP 8 style guidelines
+print(add(1.11, 2.22))
+```
 
-Proper documentation standards
+### sum_mixed_list
 
-Type annotation best practices
+```python
+from 6-sum_mixed_list import sum_mixed_list
 
-🧠 Concepts Covered
-1️⃣ Basic Variable Annotations
+print(sum_mixed_list([5, 4, 3.14, 666, 0.99]))
+```
 
-Using PEP 526 syntax:
+### make_multiplier
 
-a: int = 1
-pi: float = 3.14
-i_understand_annotations: bool = True
-school: str = "Holberton"
+```python
+from 8-make_multiplier import make_multiplier
 
+times_two = make_multiplier(2.0)
+print(times_two(3.0))
+```
 
-Purpose:
+---
 
-Make variable types explicit
 
-Improve readability
+## 👨‍💻 Author
 
-Support static analysis tools
+Rateel Bahathek
 
-2️⃣ Function Type Annotations
-
-Annotating parameters and return types:
-
-def add(a: float, b: float) -> float:
-    return a + b
-
-
-Syntax:
-
-(parameter: Type) -> ReturnType
-
-3️⃣ Collection Typing
-
-Using the typing module:
-
-from typing import List
-
-def sum_list(input_list: List[float]) -> float:
-    return sum(input_list)
-
-
-Describes:
-
-A list containing floats
-
-Return type guarantee
-
-4️⃣ Union Types
-
-Allowing multiple possible types:
-
-from typing import Union
-
-def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
-    return sum(mxd_lst)
-
-
-Meaning:
-
-Each element can be int OR float
-
-5️⃣ Tuple Typing
-
-Describing fixed-length structured returns:
-
-from typing import Tuple
-
-def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
-    return (k, float(v ** 2))
-
-
-Tuple typing ensures:
-
-Position matters
-
-Type order matters
-
-6️⃣ Callable Typing (Higher-Order Functions)
-
-Typing functions that return functions:
-
-from typing import Callable
-
-def make_multiplier(multiplier: float) -> Callable[[float], float]:
-    def multiply(x: float) -> float:
-        return x * multiplier
-    return multiply
-
-
-Callable[[float], float] means:
-
-Takes a float
-
-Returns a float
-
-This introduces:
-
-Closures
-
-Function factories
-
-Higher-order design
-
-7️⃣ Abstract Container Types
-
-Using abstract interfaces instead of concrete types:
-
-from typing import Iterable, Sequence, List, Tuple
-
-def element_length(
-    lst: Iterable[Sequence]
-) -> List[Tuple[Sequence, int]]:
-    return [(i, len(i)) for i in lst]
-
-
-Why abstract types?
-
-Instead of:
-
-List[str]
-
-
-We use:
-
-Iterable[Sequence]
-
-
-This makes the function:
-
-More flexible
-
-More generic
-
-Interface-based
