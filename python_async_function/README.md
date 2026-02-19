@@ -48,6 +48,7 @@ from 0-basic_async_syntax import wait_random
 
 print(asyncio.run(wait_random(5)))
 
+```
 ---
 ## 👨‍💻 Author
 
