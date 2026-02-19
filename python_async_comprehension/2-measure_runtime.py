@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Module for measuring runtime of async comprehensions"""
+"""Module for measuring runtime"""
 
 import asyncio
 import time
@@ -8,7 +8,7 @@ async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 
 async def measure_runtime() -> float:
-    """Execute async_comprehension four times in parallel and measure runtime"""
+    """Measure total runtime of four async_comprehension calls"""
     start = time.time()
 
     await asyncio.gather(
