@@ -53,11 +53,13 @@ class Server:
         if index is None:
             index = 0
 
+        # index must be within the range of possible indexes
         assert isinstance(index, int) and 0 <= index < len(self.dataset())
 
         data: List[List] = []
         current = index
 
+        # Collect page_size items, skipping deleted/missing indexes
         while len(data) < page_size and current < len(self.dataset()):
             if current in dataset:
                 data.append(dataset[current])
