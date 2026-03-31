@@ -67,4 +67,4 @@ console.log(await loadBalancer(fast, slow));
 ---
 
 ## ✍ Author
-**Rateel Bahathek**e
+**Rateel Bahathek**
